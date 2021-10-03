@@ -1,21 +1,26 @@
 
 
 def get_data_list():
-    pass
+    data_list = None
+    return data_list
 
 
 def get_monthly_average():
-    pass
+    avg_list = None
+    return avg_list
 
 def find_six_highest_lowest_monthly_average_price():
-    pass
+    max_min_list = None
+    return max_min_list
 
 def reformat_max_res():
-    pass
+    max_reformat_list = None
+    return max_reformat_list
 
 
-def min_reformat_list():
-    pass
+def reformat_min_res():
+    min_reformat_list = None
+    return min_reformat_list
 
 
 def print_info():
@@ -35,11 +40,12 @@ def main():
     # reformat the highest monthly avg prices
     max_reformat_list = reformat_max_res()
 
-    # reformat the lowest monthle avg prices
+    # reformat the lowest monthly avg prices
     min_reformat_list = reformat_min_res()
 
     # print output
     print_info()
+
 
 if __name__ == "__main__":
     main()
