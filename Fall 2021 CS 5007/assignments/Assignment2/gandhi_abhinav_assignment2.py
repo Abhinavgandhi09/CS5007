@@ -56,10 +56,17 @@ def find_six_highest_lowest_monthly_average_price(monthly_avg_prices):
             if max_price < float(monthly_avg_prices[row][1]):
                 max_price = float(monthly_avg_prices[row][1])
                 max_index = row
+
+        # Appending the largest avg price to max_list
         max_list.append([monthly_avg_prices[max_index][0], str(max_price)])
+
+        # Popping the largest avg price to look for next largest price
         monthly_avg_prices.pop(max_index)
+
+        # Resetting the max price value
         max_price = float(monthly_avg_prices[0][1])
 
+    # Appending all the popped values to the list to get the original avg price list
     i = 0
     while i < len(max_list):
         monthly_avg_prices.append(max_list[i])
@@ -70,8 +77,14 @@ def find_six_highest_lowest_monthly_average_price(monthly_avg_prices):
             if min_price > float(monthly_avg_prices[row][1]):
                 min_price = float(monthly_avg_prices[row][1])
                 min_index = row
+
+        # Appending the min price to the min_list
         min_list.append([monthly_avg_prices[min_index][0], monthly_avg_prices[min_index][1]])
+
+        # Popping the min price to look for next min price
         monthly_avg_prices.pop(min_index)
+
+        # Resetting min_price
         min_price = float(max_list[0][1])
 
     # Re-assigning the max and min list objects to the re-formatted lists & returning
