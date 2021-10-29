@@ -9,7 +9,6 @@ class TechnicalWritingExam(ITExam):
     CONTENT_PERCENT = 0.4
 
     def __init__(self):
-        # super().__init__()
         self.__grammer_score = 0
         self.__sentence_structure_score = 0
         self.__content_score = 0
@@ -53,17 +52,21 @@ class TechnicalWritingExam(ITExam):
 
     def getExamGrade(self):
         #  ret grade based on score
-        self.setExamScore((self.GRAMMER_PERCENT * self.__grammer_score) +
+        super().setExamScore((self.GRAMMER_PERCENT * self.__grammer_score) +
                           (self.SENTENCE_PERCENT * self.__sentence_structure_score) +
                           (self.CONTENT_PERCENT * self.__content_score))
         return super().getExamGrade()
 
     def toString(self):
         #  return exam title and score
-        # s = ""
-        # s += "\nExam Title: " + self.getExamTitle()
-        # s += "\nExam Score: " + self.getExamScore()
-        return super().toString()
+        final_grade = self.getExamGrade()
+        s = ""
+        s += super().toString()
+        s += "\nScore of Grammer Portion: " + str(round(float(self.getGrammerScore()), 1))
+        s += "\nScore of Sentence Structure Portion: " + str(round(float(self.getSentenceStructureScore()), 1))
+        s += "\nScore of Content Portion: " + str(round(float(self.getContentScore()), 1))
+        s += "\nFinal Grade: " + final_grade
 
+        return s
 
 twe_obj = TechnicalWritingExam()

@@ -38,16 +38,20 @@ class AnalyticalProgrammingExam(ITExam):
 
     def getExamGrade(self):
         #  ret grade based on score
-        self.setExamScore((self.SHORT_ANSWER_PERCENT * self.__short_answer_score) +
+        super().setExamScore((self.SHORT_ANSWER_PERCENT * self.__short_answer_score) +
                           (self.PROGRAMMING_PERCENT * self.__programming_score))
         return super().getExamGrade()
 
     def toString(self):
         #  return exam title and score
-        # s = ""
-        # s += "\nExam Title: " + self.getExamTitle()
-        # s += "\nExam Score: " + self.getExamScore()
-        return super().toString()
+        final_grade = self.getExamGrade()
+        s = ""
+        s += super().toString()
+        s += "\nScore of Short Answer Section: " + str(round(float(self.getShortAnswerScore()), 1))
+        s += "\nScore of Programming Section: " + str(round(float(self.getProgrammingScore()), 1))
+        s += "\nFinal Grade: " + final_grade
+
+        return s
 
 
 ape_object = AnalyticalProgrammingExam()

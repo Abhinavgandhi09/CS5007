@@ -38,13 +38,13 @@ class ITExam:
         # Set a default value for exam_grade
         exam_grade = 'F'
 
-        if self.exam_score >= 90:
+        if self.__exam_score >= 90:
             exam_grade = 'A'
-        elif self.exam_score >= 80:
+        elif self.__exam_score >= 80:
             exam_grade = 'B'
-        elif self.exam_score >= 70:
+        elif self.__exam_score >= 70:
             exam_grade = 'C'
-        elif self.exam_score >= 60:
+        elif self.__exam_score >= 60:
             exam_grade = 'D'
 
         return exam_grade
@@ -52,8 +52,9 @@ class ITExam:
     def toString(self):
         #  return exam title and score
         s = ""
-        s += "\nExam Title: " + self.getExamTitle()
-        s += "\nExam Score: " + self.getExamScore()
+        s += "\n\nExam Title: " + self.getExamTitle()
+        s += "\nExam Score: " + str(round(float(self.getExamScore()),1))
+
         return s
 
 
