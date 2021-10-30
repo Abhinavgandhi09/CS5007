@@ -53,7 +53,7 @@ class ITExam:
         #  return exam title and score
         s = ""
         s += "\n\nExam Title: " + self.getExamTitle()
-        s += "\nExam Score: " + str(round(float(self.getExamScore()),1))
+        s += "\nExam Score: " + str(round(float(self.getExamScore()), 1))
 
         return s
 

@@ -2,7 +2,6 @@ from ITExam import ITExam
 
 
 class AnalyticalProgrammingExam(ITExam):
-
     MAX_SCORE = 100
     SHORT_ANSWER_PERCENT = 0.3
     PROGRAMMING_PERCENT = 0.7
@@ -12,11 +11,11 @@ class AnalyticalProgrammingExam(ITExam):
         self.__short_answer_score = 0
         self.__programming_score = 0
 
-    def setShortAnswerScore(self, short_answer_Score):
+    def setShortAnswerScore(self, short_answer_score):
         #  validate and assign score
         #  ret T or F
-        if 0 <= short_answer_Score <= self.MAX_SCORE:
-            self.__short_answer_score = short_answer_Score
+        if 0 <= short_answer_score <= self.MAX_SCORE:
+            self.__short_answer_score = short_answer_score
             return True
         return False
 
@@ -24,11 +23,11 @@ class AnalyticalProgrammingExam(ITExam):
         #  ret score
         return self.__short_answer_score
 
-    def setProgrammingScore(self, programming_Score):
+    def setProgrammingScore(self, programming_score):
         #  validate and assign score
         #  ret T or F
-        if 0 <= programming_Score <= self.MAX_SCORE:
-            self.__programming_score = programming_Score
+        if 0 <= programming_score <= self.MAX_SCORE:
+            self.__programming_score = programming_score
             return True
         return False
 
@@ -39,7 +38,7 @@ class AnalyticalProgrammingExam(ITExam):
     def getExamGrade(self):
         #  ret grade based on score
         super().setExamScore((self.SHORT_ANSWER_PERCENT * self.__short_answer_score) +
-                          (self.PROGRAMMING_PERCENT * self.__programming_score))
+                             (self.PROGRAMMING_PERCENT * self.__programming_score))
         return super().getExamGrade()
 
     def toString(self):

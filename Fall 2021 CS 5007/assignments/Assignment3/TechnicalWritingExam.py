@@ -2,7 +2,6 @@ from ITExam import ITExam
 
 
 class TechnicalWritingExam(ITExam):
-
     MAX_SCORE = 100
     GRAMMER_PERCENT = 0.3
     SENTENCE_PERCENT = 0.3
@@ -53,8 +52,8 @@ class TechnicalWritingExam(ITExam):
     def getExamGrade(self):
         #  ret grade based on score
         super().setExamScore((self.GRAMMER_PERCENT * self.__grammer_score) +
-                          (self.SENTENCE_PERCENT * self.__sentence_structure_score) +
-                          (self.CONTENT_PERCENT * self.__content_score))
+                             (self.SENTENCE_PERCENT * self.__sentence_structure_score) +
+                             (self.CONTENT_PERCENT * self.__content_score))
         return super().getExamGrade()
 
     def toString(self):
@@ -68,5 +67,6 @@ class TechnicalWritingExam(ITExam):
         s += "\nFinal Grade: " + final_grade
 
         return s
+
 
 twe_obj = TechnicalWritingExam()
