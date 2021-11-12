@@ -39,11 +39,11 @@ def main():
     # This particular lambda is a method that calls another method, i.e., button_lambda_handler() in our example.
     radio_button1 = ttk.Radiobutton(root, value=1, variable=control, text="Radio Button 1",
                                     command=lambda : button_lambda_handler(radio_button1)) # After
-    radio_button1.bind("<Button-1>", button1_handler) # Before and During
+    # radio_button1.bind("<Button-1>", button1_handler) # Before and During
 
     radio_button2 = ttk.Radiobutton(root, value=2, variable=control, text="Radio Button 2",
                                     command=lambda : button_lambda_handler(radio_button2)) # After
-    radio_button2.bind("<Button-1>", button2_handler) # Before and During
+    # radio_button2.bind("<Button-1>", button2_handler) # Before and During
 
     radio_button1.pack(side=TOP)
     radio_button2.pack(side=TOP)
